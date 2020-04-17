@@ -1,68 +1,142 @@
 <!DOCTYPE html>
 <html>
+  {% load static %}
+  <head>
+    <title>Blog Application</title>
+    <meta name="google" content="notranslate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
-    <head>
-        <title>Django Central</title>
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-        <meta name="google" content="notranslate" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-            crossorigin="anonymous" />
-    </head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="{% static 'bootstrap/css/bootstrap.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
 
-    <body>
-        <style>
-            body {
-            font-family: "Roboto", sans-serif;
-            font-size: 17px;
-            background-color: #fdfdfd;
-        }
-        .shadow {
-            box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
-        }
-        .btn-danger {
-            color: #fff;
-            background-color: #f00000;
-            border-color: #dc281e;
-        }
-        .masthead {
-            background: #3398E1;
-            height: auto;
-            padding-bottom: 15px;
-            box-shadow: 0 16px 48px #E3E7EB;
-            padding-top: 10px;
-        }
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <style>
+        footer.page-footer {
+            margin: 0;
+          }
     </style>
+  </head>
 
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow" id="mainNav">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'home' %}">Django central</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item text-black">
-                            <a class="nav-link text-black font-weight-bold" href="#">About</a>
-                        </li>
-                        <li class="nav-item text-black">
-                            <a class="nav-link text-black font-weight-bold" href="#">Policy</a>
-                        </li>
-                        <li class="nav-item text-black">
-                            <a class="nav-link text-black font-weight-bold" href="#">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        {% block content %}
-        <!-- Content Goes here -->
-        {% endblock content %}
-        <!-- Footer -->
-        <footer class="py-3 bg-grey">
-            <p class="m-0 text-dark text-center ">Copyright &copy; Django Central</p>
-        </footer>
-    </body>
+  <body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="{% url 'home' %}">Brand</a
+        ><button
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          class="navbar-toggler"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" href="{% url 'about' %}">About us</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" href="{% url 'contact' %}">Contact us</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" href="#">Blog Post</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    {% block content %}
+    <!-- Content Goes here -->
+    {% endblock content %}
+    <!-- Footer -->
+    <footer class=" teal">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Company Bio</h5>
+            <p class="grey-text text-lighten-4">
+              We are a team of college students working on this project like
+              it's our full time job. Any amount would help support and continue
+              development on this project and is greatly appreciated.
+            </p>
+          </div>
+          <div class="col l3 s12">
+            <h5 class="white-text">Settings</h5>
+            <ul>
+              <li><a class="white-text" href="#!">Link 1</a></li>
+              <li><a class="white-text" href="#!">Link 2</a></li>
+              <li><a class="white-text" href="#!">Link 3</a></li>
+              <li><a class="white-text" href="#!">Link 4</a></li>
+            </ul>
+          </div>
+          <div class="col l3 s12">
+            <h5 class="white-text">Connect</h5>
+            <ul>
+              <li><a class="white-text" href="#!">Link 1</a></li>
+              <li><a class="white-text" href="#!">Link 2</a></li>
+              <li><a class="white-text" href="#!">Link 3</a></li>
+              <li><a class="white-text" href="#!">Link 4</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-lg-8 mx-auto">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                <span class="fa-stack fa-lg"
+                  ><i class="fa fa-circle fa-stack-2x"></i
+                  ><i class="fa fa-twitter fa-stack-1x fa-inverse"></i
+                ></span>
+              </li>
+              <li class="list-inline-item">
+                <span class="fa-stack fa-lg"
+                  ><i class="fa fa-circle fa-stack-2x"></i
+                  ><i class="fa fa-facebook fa-stack-1x fa-inverse"></i
+                ></span>
+              </li>
+              <li class="list-inline-item">
+                <span class="fa-stack fa-lg"
+                  ><i class="fa fa-circle fa-stack-2x"></i
+                  ><i class="fa fa-github fa-stack-1x fa-inverse"></i
+                ></span>
+              </li>
+            </ul>
+            <p class="white-text copyright">Copyright&nbsp;©&nbsp;Brand 2020</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="{% static 'js/clean-blog.js' %}"></script>
+  </body>
 </html>

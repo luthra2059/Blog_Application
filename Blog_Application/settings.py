@@ -120,6 +120,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'Blog_Application/templates/assets/'),
+    ]
+STATIC_ROOT  = os.path.join(BASE_DIR, 'staticfiles')
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.contrib.auth.context_processors.auth",

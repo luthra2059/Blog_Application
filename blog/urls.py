@@ -9,6 +9,7 @@ urlpatterns = [
                       name='about'),
      path('contact/', TemplateView.as_view(template_name='contact.html'),
                       name='contact'),
-     path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
+     path('<slug:slug>/', views.post_detail, name='post_detail'),
+   
     
 ]

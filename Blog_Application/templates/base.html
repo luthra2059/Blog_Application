@@ -36,13 +36,26 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <style>
+      #style-1::-webkit-scrollbar {
+        width: 6px;
+        background-color: #F5F5F5;
+    } 
+    #style-1::-webkit-scrollbar-thumb {
+        background-color: #000000;
+    }
+    #style-1::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        background-color: #F5F5F5;
+    }
+    </style>
+    <style>
         footer.page-footer {
             margin: 0;
           }
     </style>
   </head>
 
-  <body>
+  <body id="style-1">
     <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand" href="{% url 'home' %}">Brand</a
@@ -84,9 +97,7 @@
           <div class="col l6 s12">
             <h5 class="white-text">Company Bio</h5>
             <p class="grey-text text-lighten-4">
-              We are a team of college students working on this project like
-              it's our full time job. Any amount would help support and continue
-              development on this project and is greatly appreciated.
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, ratione doloremque aliquid porro voluptate rem, corrupti, animi quos itaque consectetur velit qui obcaecati eius sint. Exercitationem blanditiis eius magni impedit.
             </p>
           </div>
           <div class="col l3 s12">

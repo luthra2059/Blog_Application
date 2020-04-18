@@ -21,6 +21,10 @@ class Post(models.Model):
         ordering = ['-created_on']
     def __str__(self):
         return self.title
+    def get_absolute_url(self):
+        from django.urls import reverse
+
+        return reverse("post_detail", kwargs={"slug": str(self.slug)})
 
 class Comment(models.Model):
     post = models.ForeignKey(Post,on_delete=models.CASCADE,related_name='comments')

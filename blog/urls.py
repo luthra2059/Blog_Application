@@ -5,6 +5,12 @@ from django.views.generic import TemplateView
 from django.urls import include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.sitemaps.views import sitemap
+from blog.sitemaps import PostSitemap
+
+sitemaps = {
+    "posts": PostSitemap,
+}
 
 urlpatterns = [
      path('', views.PostList.as_view(), name='home'),
@@ -14,7 +20,7 @@ urlpatterns = [
                       name='contact'),
      path('<slug:slug>/', views.post_detail, name='post_detail'),
    path('summernote/',include('django_summernote.urls')),
-
+path("sitemap.xml", sitemap, {"sitemaps": sitemaps}, name="sitemap"),
     
 ]
 

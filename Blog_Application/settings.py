@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'crispy_forms',
+    'django_summernote',
 ]
 
 MIDDLEWARE = [
@@ -140,3 +141,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
 )
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+MEDIA_URL = '/media/'
+MEDIA_ROOT =os.path.join(BASE_DIR, '/media/')
+X_FRAME_OPTIONS = 'SAMEORIGIN'
